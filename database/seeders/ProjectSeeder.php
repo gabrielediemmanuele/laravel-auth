@@ -28,6 +28,8 @@ class ProjectSeeder extends Seeder
             $project->date = $faker->dateTime();
             $project->description = $faker->paragraphs(2, true);
             $project->slug = Str::slug($project->title);
+
+            $project->save();
         }
     }
 }
