@@ -42,13 +42,15 @@
                 <td>{{$project->created_at}}</td>
                 <td>{{$project->updated_at}}</td>
                 <td>
-                    <a href="#">
+                    <a href="{{ route('admin.projects.show', $project)}}">
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </td>
                 <td> 
                     <a href="#" class="text-success">
-                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-pen-to-square">
+                            
+                        </i>
                     </a>
                 </td>
                 <td>
