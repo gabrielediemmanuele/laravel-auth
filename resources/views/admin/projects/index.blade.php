@@ -61,8 +61,6 @@
                   <tr>
                     <td> <i> Non ci sono progetti.</i></td>
                   </tr>
-              @endempty
-                  
               @endforelse
             </tbody>
           </table>
