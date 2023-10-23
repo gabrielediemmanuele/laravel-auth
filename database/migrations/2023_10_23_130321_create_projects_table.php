@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('title', 50);
             $table->string('date', 50);
             $table->text('description');
+            $table->string('slug');
             $table->timestamps();
         });
     }
