@@ -31,7 +31,7 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($projects as $project)
+                @forelse ($projects as $project)
               <tr>
                 <td>{{$project->id}}</td>
                 <td>{{$project->author}}</td>
@@ -57,7 +57,13 @@
                     </a>
                 </td>
               </tr>
-              @endforeach
+              @empty 
+                  <tr>
+                    <td> <i> Non ci sono progetti.</i></td>
+                  </tr>
+              @endempty
+                  
+              @endforelse
             </tbody>
           </table>
         {{-- {{ $posts->links('pagination::bootstrap-5')}} --}}
