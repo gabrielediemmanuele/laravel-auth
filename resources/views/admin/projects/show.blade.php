@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4 mb-3">
     <a href="{{ route('admin.projects.index')}}" class="btn btn-primary"> 
-        back to project list
+        Back to List
     </a>
     {{-- <a href="{{ route('comics.create')}}" class="btn btn-primary">
         + Add New Comic
