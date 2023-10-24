@@ -134,7 +134,7 @@ class ProjectController extends Controller
             [
                 'author' => 'required|string|max:50',
                 'title' => 'required|string|max:50',
-                'date' => 'require|string|max:50',
+                'date' => 'required|string|max:50',
                 'description' => 'required',
                 'slug' => 'required|string',
             ],

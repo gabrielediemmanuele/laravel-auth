@@ -5,6 +5,9 @@
     <a href="{{ route('admin.projects.index')}}" class="btn btn-primary"> 
         Back to List
     </a>
+    <a href="{{ route('admin.projects.edit', $project)}}" class="btn btn-primary"> 
+        edit
+    </a>
     {{-- <a href="{{ route('comics.create')}}" class="btn btn-primary">
         + Add New Comic
     </a> --}}

@@ -77,7 +77,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
             <div class="col-12">
                 <label for="description" class="form-label">Description</label>
-                <textarea type="text" id="description" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description') ?? $project->description }}"></textarea>
+                <textarea type="text" id="description" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description') ?? $project->description }}">{{ old('description') ?? $project->description }}</textarea>
                 {{--* error method  --}}
                 @error('description')
                 <div class="invalid-feedback">
