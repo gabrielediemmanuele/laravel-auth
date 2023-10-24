@@ -40,7 +40,27 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* inside $data there are form dates */
+        /*  $data = $request->all(); */
+
+        /* validation call */
+        $data = $this->validation($request->all());
+
+        /* create a new comic*/
+        $comic = new Project();
+
+        /* fill with form information */
+        $comic->fill($data);
+
+        /* save inside database */
+        $comic->save();
+
+        /* 
+        ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
+        */
+        return redirect()->route('comics.show', $comic)
+            ->with('message_type', 'success')
+            ->with('message', 'Comic added successfully !');
     }
 
     /**
