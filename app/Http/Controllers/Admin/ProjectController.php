@@ -134,9 +134,10 @@ class ProjectController extends Controller
             [
                 'author' => 'required|string|max:50',
                 'title' => 'required|string|max:50',
+                'slug' => 'required|string',
+                'link' => 'required|string',
                 'date' => 'required|string|max:50',
                 'description' => 'required',
-                'slug' => 'required|string',
             ],
             [
                 'author.required' => 'The author is binding!',
@@ -147,14 +148,18 @@ class ProjectController extends Controller
                 'title.string' => 'title need to be a string!',
                 'title.max' => 'The title must have max 100 characters!',
 
+                'slug.required' => 'The slug is binding!',
+                'slug.string' => 'slug need to be a string!',
+
+                'link.required' => 'The link is binding!',
+                'link.string' => 'link need to be a string!',
+
                 'date.required' => 'The date is binding!',
                 'date.string' => 'date need to be a string!',
                 'date.max' => 'The date must have max 100 characters!',
 
-                'description.required' => 'The date is binding!',
+                'description.required' => 'The date is binding!'
 
-                'slug.required' => 'The slug is binding!',
-                'slug.string' => 'slug need to be a string!'
             ]
         )->validate();
 

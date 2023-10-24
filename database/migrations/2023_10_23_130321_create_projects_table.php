@@ -16,9 +16,10 @@ return new class extends Migration {
             $table->id();
             $table->string('author', 50);
             $table->string('title', 50);
-            $table->string('date', 50);
-            $table->text('description');
             $table->string('slug');
+            $table->string('date', 50);
+            $table->string('link');
+            $table->text('description');
             $table->timestamps();
         });
     }
