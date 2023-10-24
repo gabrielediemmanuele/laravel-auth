@@ -122,7 +122,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('comics.index')
+        return redirect()->route('admin.projects.index')
             ->with('message_type', 'danger')
             ->with('message', 'Comic deleted !');
     }
