@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 
 use App\Models\Project;
@@ -47,18 +50,18 @@ class ProjectController extends Controller
         $data = $this->validation($request->all());
 
         /* create a new comic*/
-        $comic = new Project();
+        $project = new Project();
 
         /* fill with form information */
-        $comic->fill($data);
+        $project->fill($data);
 
         /* save inside database */
-        $comic->save();
+        $project->save();
 
         /* 
         ! REMEMBER TO CODE IN MODEL FOR FILLABLE CONTENTS  
         */
-        return redirect()->route('comics.show', $comic)
+        return redirect()->route('admin.projects.show', $project)
             ->with('message_type', 'success')
             ->with('message', 'Comic added successfully !');
     }
@@ -106,5 +109,39 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function validation($data)
+    {
+        $validator = Validator::make(
+            $data,
+            [
+                'author' => 'required|string|max:50',
+                'title' => 'required|string|max:50',
+                'date' => 'require|string|max:50',
+                'description' => 'required',
+                'slug' => 'required|string',
+            ],
+            [
+                'author.required' => 'The author is binding!',
+                'author.string' => 'author need to be a string!',
+                'author.max' => 'The author must have max 100 characters!',
+
+                'title.required' => 'The title is binding!',
+                'title.string' => 'title need to be a string!',
+                'title.max' => 'The title must have max 100 characters!',
+
+                'date.required' => 'The date is binding!',
+                'date.string' => 'date need to be a string!',
+                'date.max' => 'The date must have max 100 characters!',
+
+                'description.required' => 'The date is binding!',
+
+                'slug.required' => 'The slug is binding!',
+                'slug.string' => 'slug need to be a string!'
+            ]
+        )->validate();
+
+        return $validator;
     }
 }
