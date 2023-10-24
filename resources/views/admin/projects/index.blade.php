@@ -11,6 +11,9 @@
 @section('content')
 <div class="container mt-5">
     Lista
+    <a href="{{ route('admin.projects.create')}}" class="btn btn-primary">
+      + Add new projeect
+    </a>
 </div>
 
 <div class="container mt-5">
