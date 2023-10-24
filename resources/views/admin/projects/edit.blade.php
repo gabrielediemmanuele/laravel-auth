@@ -6,7 +6,7 @@ integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFk
 crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
-@section('main-content')
+@section('content')
     <div class="container mb-5">
         <a href="{{ route('admin.projects.index')}}" class="btn btn-success mt-3 mb-4"> 
             Back to Projects

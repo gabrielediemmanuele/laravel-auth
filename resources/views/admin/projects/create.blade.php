@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('main-content')
+@section('content')
     <div class="container">
         <a href="{{ route('admin.projects.index')}}" class="btn btn-primary mt-3 mb-4"> 
             Back to projects
