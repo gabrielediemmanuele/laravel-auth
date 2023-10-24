@@ -118,9 +118,13 @@ class ProjectController extends Controller
      * @param  int  $id
      * * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    /* destroy  */
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('comics.index')
+            ->with('message_type', 'danger')
+            ->with('message', 'Comic deleted !');
     }
 
     private function validation($data)
