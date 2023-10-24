@@ -63,7 +63,7 @@ class ProjectController extends Controller
         */
         return redirect()->route('admin.projects.show', $project)
             ->with('message_type', 'success')
-            ->with('message', 'Comic added successfully !');
+            ->with('message', 'Project added successfully !');
     }
 
     /**
@@ -109,7 +109,7 @@ class ProjectController extends Controller
 
         return redirect()->route('admin.projects.show', $project)
             ->with('message_type', 'success')
-            ->with('message', 'Comic edited successfully !');
+            ->with('message', 'Project edited successfully !');
     }
 
     /**
@@ -124,7 +124,7 @@ class ProjectController extends Controller
         $project->delete();
         return redirect()->route('admin.projects.index')
             ->with('message_type', 'danger')
-            ->with('message', 'Comic deleted !');
+            ->with('message', 'Project deleted !');
     }
 
     private function validation($data)
