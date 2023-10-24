@@ -41,7 +41,7 @@
         <td>{{$project->author}}</td>
         <td>{{$project->title}}</td>
         <td>{{$project->date}}</td>
-        <td class="overflow-auto">{{$project->description}}</td>
+        <td>{{$project->description}}</td>
         <td>{{$project->slug}}</td>
         <td>{{$project->created_at}}</td>
         <td>{{$project->updated_at}}</td>
@@ -91,6 +91,6 @@
               @endforelse
             </tbody>
           </table>
-        {{-- {{ $posts->links('pagination::bootstrap-5')}} --}}
+        {{ $projects->links('pagination::bootstrap-5')}}
     </div>
 @endsection
