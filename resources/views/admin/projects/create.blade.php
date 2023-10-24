@@ -21,7 +21,6 @@
         {{--! form con metodo post che si collega alla funzione store di comicsController --}}
         <form class="row g-3" action="{{ route('admin.projects.store') }}" method="POST" >
             @csrf 
-            @method('PUT')
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
             
             <div class="col-4">

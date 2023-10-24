@@ -43,7 +43,7 @@
         <td>{{$project->title}}</td>
         <td>{{$project->slug}}</td>
         <td>{{$project->date}}</td>
-        <td><a href="">{{$project->link}}</a></td>
+        <td><a href="{{$project->link}}">Vedi lavoro</a></td>
         <td><a href="{{ route('admin.projects.show', $project)}}">Visualizza Descrizione</a></td>
         <td>{{$project->created_at}}</td>
         <td>{{$project->updated_at}}</td>
