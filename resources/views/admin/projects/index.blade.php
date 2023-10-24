@@ -24,9 +24,10 @@
         <th scope="col">ID</th>
         <th scope="col">Author</th>
         <th scope="col">Title</th>
-        <th scope="col">Date</th>
-        <th scope="col">Description</th>
         <th scope="col">Slug</th>
+        <th scope="col">Date</th>
+        <th scope="col">Link</th>
+        <th scope="col">Description</th>
         <th scope="col">Create At</th>
         <th scope="col">Update At</th>
         <th scope="col">Details</th>
@@ -40,9 +41,10 @@
         <td>{{$project->id}}</td>
         <td>{{$project->author}}</td>
         <td>{{$project->title}}</td>
-        <td>{{$project->date}}</td>
-        <td>{{$project->description}}</td>
         <td>{{$project->slug}}</td>
+        <td>{{$project->date}}</td>
+        <td><a href="">{{$project->link}}</a></td>
+        <td><a href="{{ route('admin.projects.show', $project)}}">Visualizza Descrizione</a></td>
         <td>{{$project->created_at}}</td>
         <td>{{$project->updated_at}}</td>
         <td>

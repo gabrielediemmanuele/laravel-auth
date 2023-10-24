@@ -25,9 +25,10 @@ class ProjectSeeder extends Seeder
 
             $project->author = $faker->firstNameMale();
             $project->title = $faker->catchPhrase();
-            $project->date = $faker->dateTime();
-            $project->description = $faker->paragraphs(2, true);
             $project->slug = Str::slug($project->title);
+            $project->link = $faker->catchPhrase();
+            $project->date = $faker->dateTime();
+            $project->description = $faker->paragraphs(1, true);
 
             $project->save();
         }

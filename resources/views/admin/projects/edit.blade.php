@@ -31,18 +31,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
             @csrf
             @method('PATCH') 
             {{-- for visualize correct the form use @csrf protect from fake dates --}}
-            <div class="col-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') ?? $project->title }}">
-                {{--* error method  --}}
-                @error('title')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
 
-            <div class="col-3">
+            <div class="col-4">
                 <label for="author" class="form-label">Author</label>
                 <input type="text" id="author" name="author" class="form-control @error('author') is-invalid @enderror" value="{{ old('author') ?? $project->author }}">
                 {{--* error method  --}}
@@ -53,7 +43,18 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 @enderror
             </div>
 
-            <div class="col-3">
+            <div class="col-4">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') ?? $project->title }}">
+                {{--* error method  --}}
+                @error('title')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+
+            <div class="col-4">
                 <label for="date" class="form-label">Date</label>
                 <input type="text" id="date" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date') ?? $project->date }}">
                 {{--* error method  --}}
@@ -64,11 +65,22 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 @enderror
             </div>
 
-            <div class="col-3">
+            <div class="col-4">
                 <label for="slug" class="form-label">Slug</label>
                 <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ old('slug') ?? $project->slug }}">
                 {{--* error method  --}}
                 @error('slug')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+
+            <div class="col-8">
+                <label for="link" class="form-label">Link</label>
+                <input type="text" id="link" name="link" class="form-control @error('link') is-invalid @enderror" value="{{ old('link') ?? $project->link }}">
+                {{--* error method  --}}
+                @error('link')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

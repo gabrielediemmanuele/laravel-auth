@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         /* $projects = Project::all(); */
 
-        $projects = Project::paginate(1);
+        $projects = Project::paginate(4);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -63,7 +63,7 @@ class ProjectController extends Controller
         */
         return redirect()->route('admin.projects.show', $project)
             ->with('message_type', 'success')
-            ->with('message', 'Comic added successfully !');
+            ->with('message', 'Project added successfully !');
     }
 
     /**
@@ -109,7 +109,7 @@ class ProjectController extends Controller
 
         return redirect()->route('admin.projects.show', $project)
             ->with('message_type', 'success')
-            ->with('message', 'Comic edited successfully !');
+            ->with('message', 'Project edited successfully !');
     }
 
     /**
@@ -122,9 +122,9 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('comics.index')
+        return redirect()->route('admin.projects.index')
             ->with('message_type', 'danger')
-            ->with('message', 'Comic deleted !');
+            ->with('message', 'Project deleted !');
     }
 
     private function validation($data)
@@ -134,9 +134,10 @@ class ProjectController extends Controller
             [
                 'author' => 'required|string|max:50',
                 'title' => 'required|string|max:50',
+                'slug' => 'required|string',
+                'link' => 'required|string',
                 'date' => 'required|string|max:50',
                 'description' => 'required',
-                'slug' => 'required|string',
             ],
             [
                 'author.required' => 'The author is binding!',
@@ -147,14 +148,18 @@ class ProjectController extends Controller
                 'title.string' => 'title need to be a string!',
                 'title.max' => 'The title must have max 100 characters!',
 
+                'slug.required' => 'The slug is binding!',
+                'slug.string' => 'slug need to be a string!',
+
+                'link.required' => 'The link is binding!',
+                'link.string' => 'link need to be a string!',
+
                 'date.required' => 'The date is binding!',
                 'date.string' => 'date need to be a string!',
                 'date.max' => 'The date must have max 100 characters!',
 
-                'description.required' => 'The date is binding!',
+                'description.required' => 'The date is binding!'
 
-                'slug.required' => 'The slug is binding!',
-                'slug.string' => 'slug need to be a string!'
             ]
         )->validate();
 
